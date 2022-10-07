@@ -1,6 +1,7 @@
 package com.bridgelabz.springcoreconcept;
 
 import com.bridgelabz.springcoreconcept.components.DemoBean;
+import com.bridgelabz.springcoreconcept.components.EmployeeBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -18,6 +19,11 @@ public class SpringCoreConceptApplication {
         DemoBean demoBean = context.getBean(DemoBean.class);
 
         logger.debug("DemoBean = "+ demoBean.toString());
+
+        EmployeeBean employeeBean = context.getBean(EmployeeBean.class);
+        employeeBean.setEid(101);
+        employeeBean.setEname("Xyz");
+        employeeBean.showEmployeeDetails();
     }
 
 }
